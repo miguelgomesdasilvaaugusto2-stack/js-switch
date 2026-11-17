@@ -61,6 +61,86 @@ switch (comando) {
 
 
 // 4
+const statusCode = prompt('Digite o código de resposta:');
+
+switch (statusCode) {
+    case 200:
+    case 201:
+        console.log('Sucesso: Requisição processada corretamente.');
+        break;
+    
+    case 400:
+        console.log('Erro na requisição: Verifique os dados enviados.');
+        break;
+
+    case 400:
+    case 403:
+        console.log('Acesso negado: Você não tem permissão ou precisa fazer login.');
+        break;
+
+    case 404:
+        console.log('Não encontrado: O recurso solicitado não existe.');
+        break;
+
+    case 500:
+        console.log('Erro interno no servidor: Tente novamente mais tarde.');
+        break;
+
+    default:
+        console.log('Código de status desconhecido.');
+        break;
+}
+
+
+// 5
+const perfilUsuário = prompt('Digite seu Nível de Permissão:');
+
+switch (perfilUsuário) {
+    case 'admin':
+        console.log('Acesso Total: Gerenciar usuários, configurações e conteúdos.');
+        break;
+
+    case 'editor':
+        console.log('Acesso Intermediário: Criar e editar conteúdos publicados.');
+        break;
+
+    case 'aluno':
+        console.log('Acesso Somente Leitura: Visualizar materiais disponíveis.');
+        break;
+
+    default:
+        console.log('Perfil inválido: Conta bloqueada por segurança.');
+        break;
+}
+
+
+// 6
+const eventoPagamento = prompt('Digite o evento do pagamento:');
+
+switch(eventoPagamento) {
+    case 'payment.approved':
+        console.log('Pagamento confirmado! Liberando envio do produto.');
+        break;
+
+    case 'payment.pending':
+        console.log('Aguardando compensação do pagamento...');
+        break;
+
+    case 'payment.failed':
+        console.log('Falha no pagamento: Notificando cliente para tentar outro cartão.');
+        break;
+
+    case 'payment.refunded':
+        console.log('Estorno realizado: Cancelando pedido e devolvendo estoque.');
+        break;
+
+    default:
+        console.log('Evento ignorado pelo sistema.');
+        break;
+}
+
+
+// 7
 const extensaoArquivo = prompt('Digite a Extensão do Arquivo:');
 
 switch (extensaoArquivo) {
@@ -68,24 +148,24 @@ switch (extensaoArquivo) {
     case '.png':
     case '.gif':
         console.log('Arquivo de imagem detectado. Salvando na galeria...');
-    break;
+        break;
 
     case '.pdf':
     case '.docx':
         console.log('Documento detectado. Salvando na pasta de arquivos...');
-    break;
+        break;
 
     case '.mp4':
     case '.mov':
         console.log('Vídeo detectado. Enviando para processamento de mídia...');
-    break;
+        break;
 
     case '.exe':
     case '.bat':
         console.log('Bloqueado: Arquivos executáveis não são permitidos por segurança.');
-    break;
+        break;
 
     default:
         console.log('Formato não suportado pelo sistema.');
-    break;
+        break;
 }
